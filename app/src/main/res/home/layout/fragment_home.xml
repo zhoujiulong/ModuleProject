@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.zhoujiulong.widgetlib.widget.TitleBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:title_show_backicon="false"
+        app:title_text="首页" />
+
+    <com.zhoujiulong.widgetlib.widget.LoadingView
+        android:id="@+id/loadingView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvPackageName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dip60"
+                    android:gravity="center_vertical"
+                    android:textColor="#666"
+                    android:textSize="@dimen/sip30" />
+
+                <Button
+                    android:id="@+id/bt"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="下载" />
+
+                <Button
+                    android:id="@+id/btrequest"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:text="請求" />
+
+                <com.zhoujiulong.widgetlib.widget.RoundImageView
+                    android:id="@+id/iv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    app:all_radius="@dimen/dip20"
+                    app:bottom_left_radius="@dimen/dip150"
+                    app:bottom_right_radius="@dimen/dip120"
+                    app:top_left_radius="@dimen/dip60"
+                    app:top_right_radius="@dimen/dip90" />
+
+                <com.zhoujiulong.widgetlib.widget.RoundImageView
+                    android:id="@+id/iv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scaleType="fitXY"
+                    app:all_radius="@dimen/dip20"
+                    app:bottom_left_radius="@dimen/dip150"
+                    app:bottom_right_radius="@dimen/dip120"
+                    app:top_left_radius="@dimen/dip60"
+                    app:top_right_radius="@dimen/dip90" />
+
+            </LinearLayout>
+
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </com.zhoujiulong.widgetlib.widget.LoadingView>
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

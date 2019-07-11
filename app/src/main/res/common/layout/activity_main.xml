@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip1"
+            android:background="#DDD"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dip100"
+            android:orientation="horizontal">
+
+        <RelativeLayout
+                android:id="@+id/rlHome"
+                style="@style/activity_main_tab_container">
+
+            <ImageView
+                    android:id="@+id/ivHome"
+                    style="@style/activity_main_tab_icon"
+                    android:src="@mipmap/ic_home_selected"/>
+
+            <TextView
+                    android:id="@+id/tvHome"
+                    style="@style/activity_main_tab_text"
+                    android:text="首页"
+                    android:textColor="@color/main_activity_tab_tv_selected"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/rlAccount"
+                style="@style/activity_main_tab_container">
+
+            <ImageView
+                    android:id="@+id/ivAccount"
+                    style="@style/activity_main_tab_icon"
+                    android:src="@mipmap/ic_account_unselected"/>
+
+            <TextView
+                    android:id="@+id/tvAccount"
+                    style="@style/activity_main_tab_text"
+                    android:text="我的"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorMain">#192E76</color>
+    <color name="colorMainGray">#80192E76</color>
+    <color name="colorWhite">#FFFFFF</color>
+
+    <!-- 主页面Tab字体未选中颜色 -->
+    <color name="main_activity_tab_tv_unselected">#A7A1A4</color>
+    <!-- 主页面Tab字体选中颜色 -->
+    <color name="main_activity_tab_tv_selected">@color/colorMain</color>
+
+
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,131 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+// 加载config.properties文件
+Properties configProp = new Properties()
+configProp.load(new FileInputStream(file("$rootDir/config.properties")))
+
+android {
+
+    compileSdkVersion rootProject.android_compileSdkVersion
+    buildToolsVersion rootProject.android_buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.zhoujiulong.simpleprojectframework"
+        minSdkVersion android_minSdkVersion
+        targetSdkVersion android_targetSdkVersion
+        versionCode Integer.parseInt(configProp['VersionCode'])
+        versionName configProp['VersionName']
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    signingConfigs {
+        release {//可替换成自己的
+            storePassword 'sz123456'
+            keyAlias 'zhoujiulong'
+            keyPassword 'sz123456'
+            storeFile file('release.jks')
+            v2SigningEnabled true
+        }
+        debug {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('debug.keystore')
+            v2SigningEnabled true
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //会在BuildConfig类中生成对应的值在代码中调用，如：BuildConfig.DEBUG_MODE
+            buildConfigField("String", "TEST", "\"TEST\"")
+            //占位符，可在AndroidManifest.xml中使用，如：android:value="${TEST}"
+            manifestPlaceholders = [
+                    TEST: "132"
+            ]
+        }
+        debug {
+            //如果需要debug断点调试，以下两项需设置为false
+            minifyEnabled true//debug开启混淆,防止添加依赖没添加混淆，发布release包时报错
+            shrinkResources true//如果minifyEnabled设置为false，此项也需设置为false
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "TEST", "\"TEST\"")
+            manifestPlaceholders = [
+                    TEST: "132"
+            ]
+        }
+    }
+    sourceSets {
+        //目录结构设置 res 目录的拆分,更具项目模块进行拆分
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/res',//放图片、style等通用资源
+                            'src/main/res/common',//放公用功能页面、组件
+                            'src/main/res/home',
+                            'src/main/res/account'
+                    ]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    api project(':baselib')
+    api project(':widgetlib')
+
+    api koltin
+    //网络请求
+    api retrofit
+    api gson
+    api loginterceptor
+    //rxjava
+    api rxjava
+    api rxandroid
+    //权限申请 https://github.com/tbruyelle/RxPermissions
+    api rxpermissions
+    //图片
+    api glide
+    api okhttp_integration
+    //下拉刷新 https://github.com/scwang90/SmartRefreshLayout
+    api smartrefreshlayout
+    //上拉加載更多和 adapter 適配 https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    api baserecyclerviewadapterhelper
+    //消息订阅 https://github.com/greenrobot/EventBus
+    api eventbus
+    //日志输出 https://github.com/orhanobut/logger
+    api outlogger
+    //tab切换 https://github.com/H07000223/FlycoTabLayout/blob/master/README_CN.md
+    api flycotablayout
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

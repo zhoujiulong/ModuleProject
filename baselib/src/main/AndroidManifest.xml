@@ -1,0 +1,40 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.zhoujiulong.baselib">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <application android:networkSecurityConfig="@xml/network_security_config">
+        <provider
+                android:name=".utils.AppFileProvider"
+                android:authorities="${applicationId}.myprovider"
+                android:exported="false"
+                android:grantUriPermissions="true">
+            <meta-data
+                    android:name="android.support.FILE_PROVIDER_PATHS"
+                    android:resource="@xml/app_file_paths"/>
+        </provider>
+        <meta-data
+                android:name="com.zhoujiulong.baselib.image.CustomGlideModule"
+                android:value="GlideModule"/>
+    </application>
+
+</manifest>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

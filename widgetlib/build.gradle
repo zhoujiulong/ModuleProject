@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion rootProject.android_compileSdkVersion
+    buildToolsVersion rootProject.android_buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion android_minSdkVersion
+        targetSdkVersion android_targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    implementation project(':baselib')
+
+    //下拉刷新 https://github.com/scwang90/SmartRefreshLayout
+    compileOnly smartrefreshlayout
+    //上拉加載更多和 adapter 適配 https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    compileOnly baserecyclerviewadapterhelper
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,82 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.31'
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.4.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+    android_compileSdkVersion = 28
+    android_buildToolsVersion = '28.0.3'
+    android_minSdkVersion = 16
+    android_targetSdkVersion = 28
+
+
+    koltin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    retrofit = 'com.squareup.retrofit2:retrofit:2.3.0'//Retrofit2所需要的包
+    gson = 'com.squareup.retrofit2:converter-gson:2.3.0'//ConverterFactory的Gson依赖包
+    loginterceptor = 'com.squareup.okhttp3:logging-interceptor:3.4.2'//Retrofit2日志输出的依赖包
+    //rxjava
+    rxjava = 'io.reactivex.rxjava2:rxjava:2.2.6'
+    rxandroid = 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //权限申请 https://github.com/tbruyelle/RxPermissions
+    rxpermissions = 'com.github.tbruyelle:rxpermissions:0.10.2'
+    //图片加载
+    glide = 'com.github.bumptech.glide:glide:4.7.1'
+    glidecompiler = 'com.github.bumptech.glide:compiler:4.7.1'
+    okhttp_integration = 'com.github.bumptech.glide:okhttp3-integration:4.7.1'
+    //下拉刷新 https://github.com/scwang90/SmartRefreshLayout
+    smartrefreshlayout = 'com.scwang.smartrefresh:SmartRefreshLayout:1.0.5.1'
+    //上拉加載更多和 adapter 適配 https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    baserecyclerviewadapterhelper = 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.42'
+    //消息订阅 https://github.com/greenrobot/EventBus
+    eventbus = 'org.greenrobot:eventbus:3.1.1'
+    //日志输出 https://github.com/orhanobut/logger
+    outlogger = 'com.orhanobut:logger:2.2.0'
+    //tab切换 https://github.com/H07000223/FlycoTabLayout/blob/master/README_CN.md
+    flycotablayout = 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

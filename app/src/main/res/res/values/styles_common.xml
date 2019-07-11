@@ -1,0 +1,67 @@
+<resources>
+
+    <!--全局设置-->
+    <style name="AppThemeBase" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimaryDark">@color/colorMain</item>
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorMain</item>
+        <item name="android:windowSoftInputMode">adjustResize|adjustUnspecified|stateAlwaysHidden
+        </item>
+        <item name="android:configChanges">keyboardHidden|orientation|screenSize</item>
+    </style>
+    <!-- Activity通用样式，白色北京，在Application中配置 -->
+    <style name="AppTheme" parent="AppThemeBase">
+        <item name="android:windowBackground">@color/colorWhite</item>
+    </style>
+
+    <!-- 主页 -->
+    <style name="activity_main_tab_container">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="activity_main_tab_icon">
+        <item name="android:layout_width">@dimen/dip44</item>
+        <item name="android:layout_height">@dimen/dip44</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">@dimen/dip12</item>
+        <item name="android:scaleType">fitXY</item>
+    </style>
+
+    <style name="activity_main_tab_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginBottom">@dimen/dip12</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/main_activity_tab_tv_unselected</item>
+        <item name="android:textSize">@dimen/sip20</item>
+    </style>
+
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
