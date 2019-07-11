@@ -56,10 +56,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
                     R.mipmap.ic_launcher,
                     R.mipmap.ic_launcher
                 ) { imageUrl, percent, bytesRead, totalBytes, isDone, exception ->
-                    Logger.e(
-                        "zhoujiulong",
-                        "img1:progress:$percent"
-                    )
+                    Logger.e("img1:progress:$percent")
                 }
                 val url2 =
                     "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=2824970053,2177995476&fm=26&gp=0.jpg"
@@ -70,10 +67,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
                     R.mipmap.ic_launcher,
                     R.mipmap.ic_launcher
                 ) { imageUrl, percent, bytesRead, totalBytes, isDone, exception ->
-                    Logger.e(
-                        "zhoujiulong",
-                        "img2:progress:$percent"
-                    )
+                    Logger.e("img2:progress:$percent")
                 }
             }
             R.id.btrequest -> mPresenter.login()
