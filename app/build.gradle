@@ -19,6 +19,8 @@ android {
         versionCode Integer.parseInt(configProp['VersionCode'])
         versionName configProp['VersionName']
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
     signingConfigs {
         release {//可替换成自己的
@@ -87,6 +89,8 @@ dependencies {
     api project(':widgetlib')
 
     api koltin
+    //低版本分包、64k限制解决
+    api multidex
     //网络请求
     api retrofit
     api gson

@@ -1,7 +1,9 @@
 package com.zhoujiulong.baselib.base;
 
 import android.app.Application;
+import android.content.Context;
 import android.support.annotation.Nullable;
+import android.support.multidex.MultiDex;
 import com.orhanobut.logger.AndroidLogAdapter;
 import com.orhanobut.logger.FormatStrategy;
 import com.orhanobut.logger.Logger;
@@ -16,6 +18,12 @@ import com.zhoujiulong.baselib.utils.ContextUtil;
 public class SimpleApplication extends Application {
 
     private static Application mInstance;
+
+    @Override
+    protected void attachBaseContext(Context base) {
+        super.attachBaseContext(base);
+        MultiDex.install(this);
+    }
 
     @Override
     public void onCreate() {

@@ -5,7 +5,7 @@ buildscript {
     repositories {
         google()
         jcenter()
-        
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.2'
@@ -36,6 +36,7 @@ ext {
 
 
     koltin = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    multidex = 'com.android.support:multidex:1.0.3'//低版本分包、64k限制解决
     retrofit = 'com.squareup.retrofit2:retrofit:2.3.0'//Retrofit2所需要的包
     gson = 'com.squareup.retrofit2:converter-gson:2.3.0'//ConverterFactory的Gson依赖包
     loginterceptor = 'com.squareup.okhttp3:logging-interceptor:3.4.2'//Retrofit2日志输出的依赖包
