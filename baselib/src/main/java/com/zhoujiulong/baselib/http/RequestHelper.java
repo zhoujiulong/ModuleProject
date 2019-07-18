@@ -7,8 +7,13 @@ import com.zhoujiulong.baselib.http.listener.RequestListener;
 import com.zhoujiulong.baselib.http.other.RequestErrorType;
 import com.zhoujiulong.baselib.http.response.BaseResponse;
 import com.zhoujiulong.baselib.utils.ContextUtil;
-import com.zhoujiulong.baselib.utils.FileUtil;
 import com.zhoujiulong.baselib.utils.NetworkUtil;
+import io.reactivex.Observable;
+import io.reactivex.ObservableEmitter;
+import io.reactivex.ObservableOnSubscribe;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.observers.DisposableObserver;
+import io.reactivex.schedulers.Schedulers;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -130,7 +135,7 @@ class RequestHelper {
      * @param downLoadFilePath 下载文件保存路径
      * @param downloadListener 下载回调
      */
-    void sendDownloadRequest(@NonNull final String url, @NonNull final String tag, Call<ResponseBody> call,
+    void sendDownloadRequest(@NonNull final String fileName, @NonNull final String tag, retrofit2.Call<ResponseBody> call,
                              @NonNull final String downLoadFilePath, @NonNull final DownLoadListener downloadListener) {
         if (!NetworkUtil.isNetworkAvailable(ContextUtil.getContext())) {
             downloadListener.onFail("网络连接失败");
@@ -140,62 +145,96 @@ class RequestHelper {
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(@NonNull Call<ResponseBody> call, @NonNull final Response<ResponseBody> response) {
+                if (!RequestManager.getInstance().hasRequest(tag)) return;
                 RequestManager.getInstance().removeCall(tag, call);
-                downloadListener.onStart();
-                InputStream is = null;
-                byte[] buf = new byte[2048];
-                int len = 0;
-                FileOutputStream fos = null;
-                String savePath = "";
+                if (response.code() != 200) {
+                    if (response.code() == 502 || response.code() == 404) {
+                        downloadListener.onFail(response.code() + "服务器异常，请稍后重试");
+                    } else if (response.code() == 504) {
+                        downloadListener.onFail(response.code() + "网络不给力,请检查网路");
+                    } else {
+                        downloadListener.onFail(response.code() + "网络好像出问题了哦");
+                    }
+                    return;
+                }
                 // 储存下载文件的目录
-                try {
-                    savePath = FileUtil.isExistDir(downLoadFilePath);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    downloadListener.onFail("创建本地的文件夹失败");
+                File saveFile = new File(downLoadFilePath);
+                if (!saveFile.exists() || !saveFile.isDirectory()) {
+                    boolean mkDirSuccess = saveFile.mkdir();
+                    if (!mkDirSuccess) downloadListener.onFail("创建本地的文件夹失败");
+                    return;
                 }
-                File file = null;
-                try {
-                    is = response.body().byteStream();
-                    long total = response.body().contentLength();
-                    file = new File(savePath, FileUtil.getNameFromUrl(url));
-                    fos = new FileOutputStream(file);
-                    long sum = 0;
-                    while ((len = is.read(buf)) != -1) {
-                        fos.write(buf, 0, len);
-                        sum += len;
-                        int progress = (int) (sum * 1.0f / total * 100);
-                        // 下载中
-                        downloadListener.onProgress(progress);
+                final File file = new File(saveFile, fileName);
+                downloadListener.onStart();
+                final DisposableObserver<Integer> disposable = new DisposableObserver<Integer>() {
+                    @Override
+                    public void onNext(Integer integer) {
+                        downloadListener.onProgress(integer);
                     }
-                    fos.flush();
-                    downloadListener.onDone(file);
-                } catch (Exception e) {
-                    downloadListener.onFail("Exception");
-                } finally {
-                    try {
-                        if (is != null)
-                            is.close();
-                    } catch (IOException e) {
-                        downloadListener.onFail("Exception");
+
+                    @Override
+                    public void onError(Throwable e) {
+                        downloadListener.onFail("下载文件失败：" + e.getMessage());
+                        RequestManager.getInstance().removeDisposable(tag, this);
                     }
-                    try {
-                        if (fos != null)
-                            fos.close();
-                    } catch (IOException e) {
-                        downloadListener.onFail("Exception");
+
+                    @Override
+                    public void onComplete() {
+                        downloadListener.onDone(file);
+                        RequestManager.getInstance().removeDisposable(tag, this);
                     }
-                }
+                };
+                Observable.create(new ObservableOnSubscribe<Integer>() {
+                    @Override
+                    public void subscribe(ObservableEmitter<Integer> emitter) {
+                        InputStream is = null;
+                        FileOutputStream fos = null;
+                        try {
+                            is = response.body().byteStream();
+                            long total = response.body().contentLength();
+                            fos = new FileOutputStream(file);
+                            long sum = 0;
+                            int len;
+                            byte[] buf = new byte[2048];
+                            while ((len = is.read(buf)) != -1) {
+                                fos.write(buf, 0, len);
+                                sum += len;
+                                int progress = (int) (sum * 1.0f / total * 100);
+                                emitter.onNext(progress);
+                            }
+                            fos.flush();
+                            emitter.onComplete();
+                        } catch (Exception e) {
+                            emitter.onError(e);
+                        } finally {
+                            try {
+                                if (is != null)
+                                    is.close();
+                            } catch (IOException e) {
+                                emitter.onError(e);
+                            }
+                            try {
+                                if (fos != null)
+                                    fos.close();
+                            } catch (IOException e) {
+                                emitter.onError(e);
+                            }
+                        }
+                    }
+                }).subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .onTerminateDetach()//切断与上游的引用关系
+                        .subscribe(disposable);
+                RequestManager.getInstance().addDisposable(tag, disposable);
             }
 
             @Override
             public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable throwable) {
+                if (!RequestManager.getInstance().hasRequest(tag)) return;
                 RequestManager.getInstance().removeCall(tag, call);
                 downloadListener.onFail("下载失败" + throwable.getMessage());
             }
         });
-
-
     }
 }
 

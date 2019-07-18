@@ -82,9 +82,9 @@ public class HttpUtil {
      * @param downLoadFilePath 下载文件保存路径
      * @param downloadListener 下载回调
      */
-    public static void sendDownloadRequest(@NonNull final String url, @NonNull final String tag, @NonNull retrofit2.Call<ResponseBody> call,
+    public static void sendDownloadRequest(@NonNull final String fileName, @NonNull final String tag, @NonNull retrofit2.Call<ResponseBody> call,
                                            @NonNull final String downLoadFilePath, @NonNull final DownLoadListener downloadListener) {
-        RequestHelper.getInstance().sendDownloadRequest(url, tag, call, downLoadFilePath, downloadListener);
+        RequestHelper.getInstance().sendDownloadRequest(fileName, tag, call, downLoadFilePath, downloadListener);
     }
 
     /**

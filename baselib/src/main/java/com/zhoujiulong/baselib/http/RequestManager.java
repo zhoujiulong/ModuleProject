@@ -1,5 +1,7 @@
 package com.zhoujiulong.baselib.http;
 
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 import retrofit2.Call;
 
 import java.util.ArrayList;
@@ -21,6 +23,10 @@ class RequestManager {
      * 保存没有完成的请求
      */
     private static Map<String, List<Call>> mCallMap = new ConcurrentHashMap<>();
+    /**
+     * 文件下载订阅
+     */
+    private static Map<String, CompositeDisposable> mDisposableMap = new ConcurrentHashMap<>();
 
     private RequestManager() {
     }
@@ -50,13 +56,18 @@ class RequestManager {
         if (tag == null) return;
         if (mCallMap.containsKey(tag) && mCallMap.get(tag) != null) {
             List<Call> callList = mCallMap.get(tag);
-            if (callList.size() > 0) {
+            if (callList != null && callList.size() > 0) {
                 for (Call call : callList) {
                     if (call != null && !call.isCanceled()) call.cancel();
                 }
                 callList.clear();
             }
             mCallMap.remove(tag);
+        }
+        if (mDisposableMap.containsKey(tag) && mDisposableMap.get(tag) != null) {
+            CompositeDisposable disposable = mDisposableMap.get(tag);
+            if (disposable != null) disposable.dispose();
+            mDisposableMap.remove(tag);
         }
     }
 
@@ -87,6 +98,33 @@ class RequestManager {
             if (callList.size() == 0) {
                 mCallMap.remove(tag);
             }
+        }
+    }
+
+    /**
+     * 添加文件下载的订阅
+     */
+    synchronized void addDisposable(String tag, Disposable disposable) {
+        if (tag == null || disposable == null) return;
+        CompositeDisposable compositeDisposable = null;
+        if (mDisposableMap.containsKey(tag) && mDisposableMap.get(tag) != null) {
+            compositeDisposable = mDisposableMap.get(tag);
+        }
+        if (compositeDisposable == null) {
+            compositeDisposable = new CompositeDisposable();
+            mDisposableMap.put(tag, compositeDisposable);
+        }
+        compositeDisposable.add(disposable);
+    }
+
+    /**
+     * 移除文件下载的订阅
+     */
+    synchronized void removeDisposable(String tag, Disposable disposable) {
+        if (tag == null || disposable == null) return;
+        if (mDisposableMap.containsKey(tag) && mDisposableMap.get(tag) != null) {
+            CompositeDisposable compositeDisposable = mDisposableMap.get(tag);
+            if (compositeDisposable != null) compositeDisposable.remove(disposable);
         }
     }
 
