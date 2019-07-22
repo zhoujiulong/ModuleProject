@@ -135,8 +135,8 @@ class RequestHelper {
      * @param downLoadFilePath 下载文件保存路径
      * @param downloadListener 下载回调
      */
-    void sendDownloadRequest(@NonNull final String fileName, @NonNull final String tag, retrofit2.Call<ResponseBody> call,
-                             @NonNull final String downLoadFilePath, @NonNull final DownLoadListener downloadListener) {
+    void sendDownloadRequest(@NonNull final String tag, retrofit2.Call<ResponseBody> call, @NonNull final String downLoadFilePath,
+                             @NonNull final String fileName, @NonNull final DownLoadListener downloadListener) {
         if (!NetworkUtil.isNetworkAvailable(ContextUtil.getContext())) {
             downloadListener.onFail("网络连接失败");
             return;

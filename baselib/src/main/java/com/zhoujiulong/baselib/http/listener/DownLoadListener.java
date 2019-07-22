@@ -25,11 +25,6 @@ public abstract class DownLoadListener {
     }
 
     /**
-     * 下载完成
-     */
-    public abstract void onFinish(String path);
-
-    /**
      * 下载失败
      */
     public abstract void onFail(String errorInfo);
