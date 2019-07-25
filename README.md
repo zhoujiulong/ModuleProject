@@ -13,7 +13,7 @@
 ### 配置上的处理二
     项目通过对signingConfigs、buildTypes进行配置，可Build Variants中选择运行的模式，在Terminal中输入
     assembleRelease、assembleDebug执行打不同的apk文件，同时方便在Jenkins上进行持续集成进行自动打包并
-    上传到fir等应用三方托管
+    上传到fir等应用三方托管，并且可以避免手动修改导致在打生产包时有些参数忘记修改导致的问题
 ![](https://github.com/jiulong160/ProjectFramework/blob/master/img/1563154421(1).jpg?raw=true)
 ![](https://github.com/jiulong160/ProjectFramework/blob/master/img/1563154446(1).jpg?raw=true)
 ![](https://github.com/jiulong160/ProjectFramework/blob/master/img/1563155487(1).jpg?raw=true)<br><br>
