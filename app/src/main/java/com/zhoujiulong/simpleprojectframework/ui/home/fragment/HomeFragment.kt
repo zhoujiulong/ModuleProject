@@ -8,6 +8,7 @@ import com.zhoujiulong.simpleprojectframework.R
 import com.zhoujiulong.simpleprojectframework.base.BaseFragment
 import com.zhoujiulong.simpleprojectframework.ui.home.contract.HomeFragmentContract
 import com.zhoujiulong.simpleprojectframework.ui.home.presenter.HomeFragmentPresenter
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 /**
@@ -28,7 +29,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
     }
 
     override fun initListener() {
-        setOnClick(mRootView.bt, mRootView.btrequest)
+        setOnClick(bt, btrequest)
     }
 
     override fun initData() {

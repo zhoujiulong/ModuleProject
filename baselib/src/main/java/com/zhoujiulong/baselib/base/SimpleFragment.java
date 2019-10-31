@@ -31,19 +31,19 @@ public abstract class SimpleFragment extends Fragment implements View.OnClickLis
 
         mContext = getActivity();
         mActivity = getActivity();
-
-        initView(mRootView);
-        initPresenter();
-        attachView();
-        initListener();
-        initData();
-        getData();
         return mRootView;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        initView(mRootView);
+        initPresenter();
+        attachView();
+        initListener();
+        initData();
+        getData();
+
         mIsPrepared = true;
         if (getUserVisibleHint() && mIsFirstTimeLoadData) {
             mIsFirstTimeLoadData = false;

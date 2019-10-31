@@ -5,7 +5,7 @@ import com.zhoujiulong.simpleprojectframework.R
 import com.zhoujiulong.simpleprojectframework.base.BaseFragment
 import com.zhoujiulong.simpleprojectframework.ui.account.contract.AccountFragmentContract
 import com.zhoujiulong.simpleprojectframework.ui.account.presenter.AccountFragmentPresenter
-import kotlinx.android.synthetic.main.fragment_account.view.*
+import kotlinx.android.synthetic.main.fragment_account.*
 
 /**
  * @author zhoujiulong
@@ -26,8 +26,8 @@ class AccountFragment : BaseFragment<AccountFragmentPresenter>(), AccountFragmen
     }
 
     override fun initListener() {
-        mRootView.loadingView.setOnBottomTvListener {
-            mRootView.loadingView.showLoading()
+        loadingView.setOnBottomTvListener {
+            loadingView.showLoading()
             getData()
         }
     }
@@ -37,8 +37,8 @@ class AccountFragment : BaseFragment<AccountFragmentPresenter>(), AccountFragmen
     }
 
     override fun getData() {
-        mRootView.loadingView.postDelayed({
-            mRootView.loadingView.showEmpty()
+        loadingView.postDelayed({
+            loadingView.showEmpty()
         }, 3000)
     }
 
