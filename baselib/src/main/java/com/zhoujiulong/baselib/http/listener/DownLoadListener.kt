@@ -1,7 +1,7 @@
-package com.zhoujiulong.baselib.http.listener;
+package com.zhoujiulong.baselib.http.listener
 
 
-import java.io.File;
+import java.io.File
 
 /**
  * Author : zhoujiulong
@@ -9,30 +9,29 @@ import java.io.File;
  * Time : 2017/03/24
  * Desc : 下载监听
  */
-public abstract class DownLoadListener {
+abstract class DownLoadListener {
 
     /**
      * 下载开始
      */
-    public void onStart() {
-    }
+    fun onStart() {}
 
     /**
      * 下载进度
      */
-    public void onProgress(int progress) {
+    fun onProgress(progress: Int) {
 
     }
 
     /**
      * 下载失败
      */
-    public abstract void onFail(String errorInfo);
+    abstract fun onFail(errorInfo: String)
 
     /**
      * 下载完成的文件
      */
-    public abstract void onDone(File file);
+    abstract fun onDone(file: File)
 
 }
 

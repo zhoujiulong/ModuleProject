@@ -4,6 +4,7 @@ import com.scwang.smartrefresh.layout.SmartRefreshLayout
 import com.zhoujiulong.baselib.R
 import com.zhoujiulong.baselib.base.SimpleApplication
 import com.zhoujiulong.baselib.http.HttpUtil
+import com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener
 import com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader
 
 /**
@@ -39,9 +40,11 @@ class AppApplication : SimpleApplication() {
      */
     private fun initHttpUtil() {
         HttpUtil.addHeaderInterceptor(HeaderInterceptor())
-        HttpUtil.initTokenInvalidListener { code, msg ->
-            //Token失效
-        }
+        HttpUtil.initTokenInvalidListener(object : OnTokenInvalidListener {
+            override fun onTokenInvalid(code: Int, msg: String) {
+
+            }
+        })
     }
 }
 

@@ -18541,79 +18541,102 @@ com.zhoujiulong.baselib.base.SimpleFragment -> com.zhoujiulong.baselib.base.c:
     39:52:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
     138:143:void setUserVisibleHint(boolean) -> setUserVisibleHint
 com.zhoujiulong.baselib.http.HttpUtil -> com.zhoujiulong.baselib.a.a:
-    27:28:void initTokenInvalidListener(com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener) -> a
-    34:35:void addHeaderInterceptor(okhttp3.Interceptor) -> a
-    52:52:java.lang.Object getService(java.lang.Class,com.zhoujiulong.baselib.http.other.TimeOut[]) -> a
-    75:76:void sendRequest(java.lang.String,retrofit2.Call,com.zhoujiulong.baselib.http.listener.RequestListener) -> a
+    com.zhoujiulong.baselib.http.HttpUtil INSTANCE -> a
+    17:17:void <clinit>() -> <clinit>
+    17:17:void <init>() -> <init>
+    29:30:void initTokenInvalidListener(com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener) -> a
+    36:37:void addHeaderInterceptor(okhttp3.Interceptor) -> a
+    48:48:java.lang.Object getService(java.lang.Class,com.zhoujiulong.baselib.http.other.TimeOut[]) -> a
+    72:73:void sendRequest(java.lang.String,retrofit2.Call,com.zhoujiulong.baselib.http.listener.RequestListener) -> a
     94:95:void cancelWithTag(java.lang.String) -> a
-com.zhoujiulong.baselib.http.RequestHelper -> com.zhoujiulong.baselib.a.c:
+com.zhoujiulong.baselib.http.RequestHelper -> com.zhoujiulong.baselib.a.b:
     com.zhoujiulong.baselib.http.RequestHelper mInstance -> a
-    com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener mOnTokenInvalidListener -> b
-    int REQUEST_FAILD_CODE -> d
-    int ON_TOKEN_INVALID_CODE_1025 -> e
-    int REQUEST_SUCCESS_CODE -> c
-    51:52:void <init>() -> <init>
-    33:33:com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener access$000(com.zhoujiulong.baselib.http.RequestHelper) -> a
-    55:62:com.zhoujiulong.baselib.http.RequestHelper getInstance() -> a
-    69:70:void setOnTokenInvalidListener(com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener) -> a
-    80:129:void sendRequest(java.lang.String,retrofit2.Call,com.zhoujiulong.baselib.http.listener.RequestListener) -> a
-com.zhoujiulong.baselib.http.RequestHelper$1 -> com.zhoujiulong.baselib.a.b:
-    com.zhoujiulong.baselib.http.listener.RequestListener val$listener -> b
-    com.zhoujiulong.baselib.http.RequestHelper this$0 -> c
-    java.lang.String val$tag -> a
-    85:85:void <init>(com.zhoujiulong.baselib.http.RequestHelper,java.lang.String,com.zhoujiulong.baselib.http.listener.RequestListener) -> <init>
-    88:120:void onResponse(retrofit2.Call,retrofit2.Response) -> a
-    124:127:void onFailure(retrofit2.Call,java.lang.Throwable) -> a
+    com.zhoujiulong.baselib.http.RequestHelper$Companion Companion -> b
+    com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener mOnTokenInvalidListener -> c
+    31:31:void <init>() -> <init>
+    31:31:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    31:31:com.zhoujiulong.baselib.http.RequestHelper access$getMInstance$cp() -> a
+    31:31:com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener access$getMOnTokenInvalidListener$p(com.zhoujiulong.baselib.http.RequestHelper) -> a
+    55:56:void setOnTokenInvalidListener(com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener) -> a
+    66:161:void sendRequest(java.lang.String,retrofit2.Call,com.zhoujiulong.baselib.http.listener.RequestListener) -> a
+    31:31:void access$setMInstance$cp(com.zhoujiulong.baselib.http.RequestHelper) -> b
+com.zhoujiulong.baselib.http.RequestHelper$Companion -> com.zhoujiulong.baselib.a.b$a:
+    34:34:void <init>() -> <init>
+    34:34:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    40:47:com.zhoujiulong.baselib.http.RequestHelper getInstance() -> a
+com.zhoujiulong.baselib.http.RequestHelper$sendRequest$1 -> com.zhoujiulong.baselib.a.c:
+    com.zhoujiulong.baselib.http.RequestHelper this$0 -> a
+    com.zhoujiulong.baselib.http.listener.RequestListener $listener -> c
+    java.lang.String $tag -> b
+    76:76:void <init>(com.zhoujiulong.baselib.http.RequestHelper,java.lang.String,com.zhoujiulong.baselib.http.listener.RequestListener) -> <init>
+    79:148:void onResponse(retrofit2.Call,retrofit2.Response) -> a
+    151:159:void onFailure(retrofit2.Call,java.lang.Throwable) -> a
 com.zhoujiulong.baselib.http.RequestManager -> com.zhoujiulong.baselib.a.d:
-    java.util.Map mCallMap -> b
-    java.util.Map mDisposableMap -> c
+    java.util.concurrent.ConcurrentHashMap mDisposableMap -> c
+    java.util.concurrent.ConcurrentHashMap mCallMap -> b
+    com.zhoujiulong.baselib.http.RequestManager$Companion Companion -> d
     com.zhoujiulong.baselib.http.RequestManager mInstance -> a
-    25:29:void <clinit>() -> <clinit>
-    31:32:void <init>() -> <init>
-    35:42:com.zhoujiulong.baselib.http.RequestManager getInstance() -> a
+    24:28:void <clinit>() -> <clinit>
+    15:15:void <init>() -> <init>
+    15:15:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    15:15:com.zhoujiulong.baselib.http.RequestManager access$getMInstance$cp() -> a
+    15:15:void access$setMInstance$cp(com.zhoujiulong.baselib.http.RequestManager) -> a
     56:55:void cancelRequestWithTag(java.lang.String) -> a
-    78:78:void addCall(java.lang.String,retrofit2.Call) -> a
-    49:49:boolean hasRequest(java.lang.String) -> b
-    92:92:void removeCall(java.lang.String,retrofit2.Call) -> b
-com.zhoujiulong.baselib.http.ServiceManager -> com.zhoujiulong.baselib.a.f:
+    78:77:void addCall(java.lang.String,retrofit2.Call) -> a
+    48:48:boolean hasRequest(java.lang.String) -> b
+    92:91:void removeCall(java.lang.String,retrofit2.Call) -> b
+com.zhoujiulong.baselib.http.RequestManager$Companion -> com.zhoujiulong.baselib.a.d$a:
+    17:17:void <init>() -> <init>
+    17:17:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    32:39:com.zhoujiulong.baselib.http.RequestManager getInstance() -> a
+com.zhoujiulong.baselib.http.ServiceManager -> com.zhoujiulong.baselib.a.e:
+    com.zhoujiulong.baselib.http.ServiceManager$Companion Companion -> b
     com.zhoujiulong.baselib.http.ServiceManager mInstance -> a
-    okhttp3.Interceptor mHeaderInterceptor -> d
-    java.lang.Boolean mIsDebug -> c
-    java.util.Map mRetrofits -> e
-    java.lang.String mBaseUrl -> b
-    32:36:void <init>() -> <init>
-    39:46:com.zhoujiulong.baselib.http.ServiceManager getInstance() -> a
-    50:51:void setHeaderInterceptor(okhttp3.Interceptor) -> a
-    61:61:java.lang.Object getService(java.lang.Class,com.zhoujiulong.baselib.http.other.TimeOut[]) -> a
-    73:72:java.lang.Object getService(java.lang.Class,java.lang.String,com.zhoujiulong.baselib.http.other.TimeOut[]) -> a
-com.zhoujiulong.baselib.http.ServiceManager$1 -> com.zhoujiulong.baselib.a.e:
-    int[] $SwitchMap$com$zhoujiulong$baselib$http$other$TimeOut$TimeOutType -> a
-    83:83:void <clinit>() -> <clinit>
+    okhttp3.Interceptor mHeaderInterceptor -> e
+    java.lang.String baseUrl -> c
+    java.util.Map mRetrofits -> f
+    boolean mIsDebug -> d
+    20:25:void <init>() -> <init>
+    20:20:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    20:20:com.zhoujiulong.baselib.http.ServiceManager access$getMInstance$cp() -> a
+    20:20:void access$setMInstance$cp(com.zhoujiulong.baselib.http.ServiceManager) -> a
+    45:46:void setHeaderInterceptor(okhttp3.Interceptor) -> a
+    57:57:java.lang.Object getService(java.lang.Class,com.zhoujiulong.baselib.http.other.TimeOut[]) -> a
+    70:69:java.lang.Object getService(java.lang.Class,java.lang.String,com.zhoujiulong.baselib.http.other.TimeOut[]) -> a
+com.zhoujiulong.baselib.http.ServiceManager$Companion -> com.zhoujiulong.baselib.a.e$a:
+    27:27:void <init>() -> <init>
+    27:27:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    33:40:com.zhoujiulong.baselib.http.ServiceManager getInstance() -> a
+com.zhoujiulong.baselib.http.ServiceManager$WhenMappings -> com.zhoujiulong.baselib.a.f:
+    int[] $EnumSwitchMapping$0 -> a
 com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener -> com.zhoujiulong.baselib.a.a.a:
     void onTokenInvalid(int,java.lang.String) -> a
 com.zhoujiulong.baselib.http.listener.RequestListener -> com.zhoujiulong.baselib.a.a.b:
-    13:13:void <init>() -> <init>
+    12:12:void <init>() -> <init>
     void requestError(java.lang.Object,com.zhoujiulong.baselib.http.other.RequestErrorType,java.lang.String,int) -> a
     void requestSuccess(java.lang.Object) -> a
-    40:40:boolean checkLogin(int,java.lang.String) -> a
+    44:44:boolean checkLogin(int,java.lang.String) -> a
 com.zhoujiulong.baselib.http.other.RequestErrorType -> com.zhoujiulong.baselib.http.other.RequestErrorType:
-    14:10:void <clinit>() -> <clinit>
     10:10:void <init>(java.lang.String,int) -> <init>
-    10:10:com.zhoujiulong.baselib.http.other.RequestErrorType valueOf(java.lang.String) -> valueOf
-    10:10:com.zhoujiulong.baselib.http.other.RequestErrorType[] values() -> values
 com.zhoujiulong.baselib.http.other.TimeOut -> com.zhoujiulong.baselib.http.other.TimeOut:
-    com.zhoujiulong.baselib.http.other.TimeOut$TimeOutType getTimeOutType() -> a
+    long timeOutSeconds -> b
+    com.zhoujiulong.baselib.http.other.TimeOut$TimeOutType timeOutType -> a
+    18:18:long getTimeOutSeconds() -> a
+    14:14:com.zhoujiulong.baselib.http.other.TimeOut$TimeOutType getTimeOutType() -> b
 com.zhoujiulong.baselib.http.other.TimeOut$TimeOutType -> com.zhoujiulong.baselib.http.other.TimeOut$TimeOutType:
-    13:12:void <clinit>() -> <clinit>
-    12:12:void <init>(java.lang.String,int) -> <init>
-    12:12:com.zhoujiulong.baselib.http.other.TimeOut$TimeOutType valueOf(java.lang.String) -> valueOf
-    12:12:com.zhoujiulong.baselib.http.other.TimeOut$TimeOutType[] values() -> values
+    21:21:void <init>(java.lang.String,int) -> <init>
 com.zhoujiulong.baselib.http.response.BaseResponse -> com.zhoujiulong.baselib.http.response.BaseResponse:
-    9:9:void <init>() -> <init>
+    10:13:void <init>() -> <init>
+    12:12:int getCode() -> getCode
+    13:13:java.lang.String getMessage() -> getMessage
+    12:12:void setCode(int) -> setCode
+    13:13:void setMessage(java.lang.String) -> setMessage
 com.zhoujiulong.baselib.http.response.DataResponse -> com.zhoujiulong.baselib.http.response.DataResponse:
-    12:12:void <init>() -> <init>
+    12:14:void <init>(java.lang.Object) -> <init>
+    13:13:java.lang.Object getData() -> getData
 com.zhoujiulong.baselib.http.response.ListResponse -> com.zhoujiulong.baselib.http.response.ListResponse:
-    13:13:void <init>() -> <init>
+    12:14:void <init>(java.util.List) -> <init>
+    13:13:java.util.List getData() -> getData
 com.zhoujiulong.baselib.image.CustomGlideModule -> com.zhoujiulong.baselib.b.a:
     18:18:void <init>() -> <init>
     29:31:void registerComponents(android.content.Context,com.bumptech.glide.Glide,com.bumptech.glide.Registry) -> a
@@ -18910,17 +18933,17 @@ com.zhoujiulong.simpleprojectframework.R$styleable -> com.zhoujiulong.simpleproj
 com.zhoujiulong.simpleprojectframework.R$xml -> com.zhoujiulong.simpleprojectframework.R$xml:
     18968:18968:void <init>() -> <init>
 com.zhoujiulong.simpleprojectframework.app.AppApplication -> com.zhoujiulong.simpleprojectframework.app.AppApplication:
-    13:13:void <init>() -> <init>
-    41:45:void initHttpUtil() -> b
-    27:35:void initRefresh() -> c
-    16:19:void onCreate() -> onCreate
+    14:14:void <init>() -> <init>
+    42:48:void initHttpUtil() -> b
+    28:36:void initRefresh() -> c
+    17:20:void onCreate() -> onCreate
 com.zhoujiulong.simpleprojectframework.app.AppApplication$initHttpUtil$1 -> com.zhoujiulong.simpleprojectframework.app.a:
-    com.zhoujiulong.simpleprojectframework.app.AppApplication$initHttpUtil$1 INSTANCE -> a
-    44:44:void onTokenInvalid(int,java.lang.String) -> a
+    43:43:void <init>() -> <init>
+    46:46:void onTokenInvalid(int,java.lang.String) -> a
 com.zhoujiulong.simpleprojectframework.app.AppApplication$initRefresh$1 -> com.zhoujiulong.simpleprojectframework.app.b:
     com.zhoujiulong.simpleprojectframework.app.AppApplication this$0 -> a
-    13:13:com.scwang.smartrefresh.layout.api.RefreshHeader createRefreshHeader(android.content.Context,com.scwang.smartrefresh.layout.api.RefreshLayout) -> a
-    28:33:com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader createRefreshHeader(android.content.Context,com.scwang.smartrefresh.layout.api.RefreshLayout) -> a
+    14:14:com.scwang.smartrefresh.layout.api.RefreshHeader createRefreshHeader(android.content.Context,com.scwang.smartrefresh.layout.api.RefreshLayout) -> a
+    29:34:com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader createRefreshHeader(android.content.Context,com.scwang.smartrefresh.layout.api.RefreshLayout) -> a
 com.zhoujiulong.simpleprojectframework.app.HeaderInterceptor -> com.zhoujiulong.simpleprojectframework.app.c:
     15:15:void <init>() -> <init>
     20:24:okhttp3.Response intercept(okhttp3.Interceptor$Chain) -> intercept

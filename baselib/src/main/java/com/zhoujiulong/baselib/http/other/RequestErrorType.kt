@@ -1,4 +1,4 @@
-package com.zhoujiulong.baselib.http.other;
+package com.zhoujiulong.baselib.http.other
 
 /**
  * Author : zhoujiulong
@@ -7,7 +7,7 @@ package com.zhoujiulong.baselib.http.other;
  * 描述 : 请求返回的 code 类型
  */
 
-public enum RequestErrorType {
+enum class RequestErrorType {
     /**
      * 未定义的错误
      */
@@ -19,5 +19,5 @@ public enum RequestErrorType {
     /**
      * Token 失效
      */
-    TOKEN_INVALID,
+    TOKEN_INVALID
 }
