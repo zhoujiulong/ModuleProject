@@ -105,10 +105,10 @@ public class TitleBar extends Toolbar implements View.OnClickListener {
     private void initStatusBar() {
         if (getContext() instanceof Activity) {
             Activity activity = (Activity) getContext();
-            if (StatusBarUtil.translucent(activity)) {
-                StatusBarUtil.setStatusBarLightMode(activity);
+            if (StatusBarUtil.INSTANCE.translucent(activity)) {
+                StatusBarUtil.INSTANCE.setStatusBarLightMode(activity);
                 ViewGroup.LayoutParams params = mTopEmptyView.getLayoutParams();
-                params.height = ScreenUtil.getStatusBarHeight(activity);
+                params.height = ScreenUtil.INSTANCE.getStatusBarHeight(activity);
                 mTopEmptyView.setLayoutParams(params);
             }
         }
@@ -124,7 +124,7 @@ public class TitleBar extends Toolbar implements View.OnClickListener {
                 Activity activity = (Activity) getContext();
                 activity.finish();
             } else {
-                ToastUtil.toast("TitleBar: context 不是 Activity");
+                ToastUtil.INSTANCE.toast("TitleBar: context 不是 Activity");
             }
         } else if (id == R.id.tv_right) {
             if (mRightTitleListener != null) {

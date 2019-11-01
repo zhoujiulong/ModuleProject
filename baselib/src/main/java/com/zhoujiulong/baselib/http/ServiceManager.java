@@ -71,7 +71,7 @@ class ServiceManager {
      */
     synchronized <T> T getService(@NonNull Class<T> callClass, @NonNull String baseUrl, TimeOut... timeOuts) {
         String key = new StringBuilder().append(mHeaderInterceptor == null ? "" : mHeaderInterceptor.hashCode())
-                .append(mIsDebug).append(baseUrl).append(JsonUtil.object2String(timeOuts)).toString();
+                .append(mIsDebug).append(baseUrl).append(JsonUtil.INSTANCE.object2String(timeOuts)).toString();
         Retrofit retrofit = null;
         if (mRetrofits.containsKey(key)) retrofit = mRetrofits.get(key);
         if (retrofit == null) {

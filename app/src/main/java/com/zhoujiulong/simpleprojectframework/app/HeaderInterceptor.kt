@@ -18,9 +18,9 @@ class HeaderInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
 
         val builder = chain.request().newBuilder()
-        builder.header("version", PhoneUtils.getAppVersion())//App 版本号
+        builder.header("version", PhoneUtils.appVersion)//App 版本号
             //手机屏幕分辨率
-            .header("screen", ScreenUtil.getScreenWidth().toString() + "*" + ScreenUtil.getScreenHeight())
+            .header("screen", ScreenUtil.screenWidth.toString() + "*" + ScreenUtil.screenHeight)
         return chain.proceed(builder.build())
     }
 

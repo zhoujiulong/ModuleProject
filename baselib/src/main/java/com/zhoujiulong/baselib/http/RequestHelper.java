@@ -77,7 +77,7 @@ class RequestHelper {
      * @param <T>      请求返回的数据对应的类型，第一层必须继承 BaseResponse
      */
     <T> void sendRequest(@NonNull final String tag, @NonNull Call<T> call, @NonNull final RequestListener<T> listener) {
-        if (!NetworkUtil.isNetworkAvailable(ContextUtil.getContext())) {
+        if (!NetworkUtil.INSTANCE.isNetworkAvailable(ContextUtil.INSTANCE.getContext())) {
             listener.requestError(null, RequestErrorType.NO_INTERNET, "网络连接失败", REQUEST_FAILD_CODE);
             return;
         }
@@ -137,7 +137,7 @@ class RequestHelper {
      */
     void sendDownloadRequest(@NonNull final String tag, retrofit2.Call<ResponseBody> call, @NonNull final String downLoadFilePath,
                              @NonNull final String fileName, @NonNull final DownLoadListener downloadListener) {
-        if (!NetworkUtil.isNetworkAvailable(ContextUtil.getContext())) {
+        if (!NetworkUtil.INSTANCE.isNetworkAvailable(ContextUtil.INSTANCE.getContext())) {
             downloadListener.onFail("网络连接失败");
             return;
         }

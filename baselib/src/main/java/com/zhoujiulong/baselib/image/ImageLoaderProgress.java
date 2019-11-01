@@ -76,7 +76,7 @@ class ImageLoaderProgress {
         } else if (context != null) {
             glide = GlideApp.with(context);
         } else {
-            ToastUtil.toast("参数缺少");
+            ToastUtil.INSTANCE.toast("参数缺少");
             return;
         }
         glide.load(url)

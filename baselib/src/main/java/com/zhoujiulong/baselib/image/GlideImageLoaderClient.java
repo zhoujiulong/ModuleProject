@@ -169,7 +169,7 @@ public class GlideImageLoaderClient implements IImageLoaderClient {
         if (thumbnailSize >= 0.0F && thumbnailSize <= 1.0F) {
             GlideApp.with(context).load(url).thumbnail(thumbnailSize).into(imageView);
         } else {
-            ToastUtil.toast("thumbnailSize 的值必须在0到1之间");
+            ToastUtil.INSTANCE.toast("thumbnailSize 的值必须在0到1之间");
         }
     }
 
@@ -178,7 +178,7 @@ public class GlideImageLoaderClient implements IImageLoaderClient {
         if (thumbnailSize >= 0.0F && thumbnailSize <= 1.0F) {
             GlideApp.with(fragment).load(url).thumbnail(thumbnailSize).into(imageView);
         } else {
-            ToastUtil.toast("thumbnailSize 的值必须在0到1之间");
+            ToastUtil.INSTANCE.toast("thumbnailSize 的值必须在0到1之间");
         }
     }
 
@@ -187,7 +187,7 @@ public class GlideImageLoaderClient implements IImageLoaderClient {
         if (thumbnailSize >= 0.0F && thumbnailSize <= 1.0F) {
             GlideApp.with(activity).load(url).thumbnail(thumbnailSize).into(imageView);
         } else {
-            ToastUtil.toast("thumbnailSize 的值必须在0到1之间");
+            ToastUtil.INSTANCE.toast("thumbnailSize 的值必须在0到1之间");
         }
     }
 

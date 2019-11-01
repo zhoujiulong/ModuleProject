@@ -59,8 +59,8 @@ public class NormalRefreshHeader extends RelativeLayout implements RefreshHeader
         mImageViewAni = new ImageView(getContext());
         mImageViewAni.setScaleType(ImageView.ScaleType.FIT_XY);
         mImageViewAni.setImageResource(R.drawable.anim_refresh);
-        int ivWidth = DensityUtil.getPxByResId(getContext(), R.dimen.dip80);
-        int ivHeight = DensityUtil.getPxByResId(getContext(), R.dimen.dip80);
+        int ivWidth = DensityUtil.INSTANCE.getPxByResId(getContext(), R.dimen.dip80);
+        int ivHeight = DensityUtil.INSTANCE.getPxByResId(getContext(), R.dimen.dip80);
         LayoutParams lpHeaderLayout = new LayoutParams(ivWidth, ivHeight);
         lpHeaderLayout.addRule(CENTER_IN_PARENT);
         addView(mImageViewAni, lpHeaderLayout);
