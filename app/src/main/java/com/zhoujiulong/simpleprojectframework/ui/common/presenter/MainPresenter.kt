@@ -6,9 +6,10 @@ import com.zhoujiulong.simpleprojectframework.ui.common.model.MainModel
 
 class MainPresenter : BasePresenter<MainModel, MainContract.IView>(), MainContract.IPresenter {
 
-    override fun initModel() {
-        mModel = MainModel()
+    override fun initModel(): MainModel {
+        return MainModel()
     }
+
 
 }
 

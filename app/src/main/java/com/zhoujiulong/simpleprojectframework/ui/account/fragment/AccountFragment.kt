@@ -3,21 +3,21 @@ package com.zhoujiulong.simpleprojectframework.ui.account.fragment
 import android.view.View
 import com.zhoujiulong.simpleprojectframework.R
 import com.zhoujiulong.simpleprojectframework.base.BaseFragment
-import com.zhoujiulong.simpleprojectframework.ui.account.contract.AccountFragmentContract
-import com.zhoujiulong.simpleprojectframework.ui.account.presenter.AccountFragmentPresenter
+import com.zhoujiulong.simpleprojectframework.base.emptyimpl.EmptyContract
+import com.zhoujiulong.simpleprojectframework.base.emptyimpl.EmptyPresenter
 import kotlinx.android.synthetic.main.fragment_account.*
 
 /**
  * @author zhoujiulong
  * @createtime 2019/2/27 13:59
  */
-class AccountFragment : BaseFragment<AccountFragmentPresenter>(), AccountFragmentContract.IView {
+class AccountFragment : BaseFragment<EmptyPresenter>(), EmptyContract.IView {
 
     override fun getLayoutId(): Int {
         return R.layout.fragment_account
     }
 
-    override fun initView(rootView: View) {
+    override fun initView() {
 
     }
 

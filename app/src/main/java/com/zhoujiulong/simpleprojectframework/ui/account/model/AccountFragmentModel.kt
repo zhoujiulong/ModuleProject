@@ -10,8 +10,8 @@ import com.zhoujiulong.simpleprojectframework.ui.home.service.HomeFragmentServic
  */
 class AccountFragmentModel : BaseModel<HomeFragmentService>() {
 
-    override fun initService() {
-        mService = HttpUtil.getService(HomeFragmentService::class.java)
+    override fun initService() :HomeFragmentService {
+        return HttpUtil.getService(HomeFragmentService::class.java)
     }
 
 }

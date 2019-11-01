@@ -35,7 +35,6 @@ class MainActivity : BaseActivity<MainPresenter>(), MainContract.IView {
 
     override fun initPresenter() {
         mPresenter = MainPresenter()
-        mPresenter?.attachView(this@MainActivity, ReTag)
     }
 
     override fun initListener() {

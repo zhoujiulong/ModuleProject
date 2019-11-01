@@ -6,8 +6,8 @@ import com.zhoujiulong.simpleprojectframework.ui.common.service.MainService
 
 class MainModel : BaseModel<MainService>() {
 
-    override fun initService() {
-        mService = HttpUtil.getService(MainService::class.java)
+    override fun initService(): MainService {
+        return HttpUtil.getService(MainService::class.java)
     }
 
 }

@@ -5,8 +5,7 @@ import com.zhoujiulong.baselib.http.listener.RequestListener
 import com.zhoujiulong.baselib.http.response.DataResponse
 import com.zhoujiulong.simpleprojectframework.base.BaseModel
 import com.zhoujiulong.simpleprojectframework.ui.home.service.HomeFragmentService
-
-import java.util.HashMap
+import java.util.*
 
 /**
  * @author zhoujiulong
@@ -14,8 +13,8 @@ import java.util.HashMap
  */
 class HomeFragmentModel : BaseModel<HomeFragmentService>() {
 
-    override fun initService() {
-        mService = HttpUtil.getService(HomeFragmentService::class.java)
+    override fun initService(): HomeFragmentService {
+        return HttpUtil.getService(HomeFragmentService::class.java)
     }
 
     fun login(username: String, password: String, listener: RequestListener<DataResponse<String>>) {

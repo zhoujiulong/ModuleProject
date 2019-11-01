@@ -18469,40 +18469,53 @@ com.zhoujiulong.baselib.R$xml -> com.zhoujiulong.baselib.R$xml:
     3309:3309:void <init>() -> <init>
 com.zhoujiulong.baselib.base.ActivityManager -> com.zhoujiulong.baselib.base.a:
     java.util.Stack activityStack -> a
+    com.zhoujiulong.baselib.base.ActivityManager$Companion Companion -> c
     com.zhoujiulong.baselib.base.ActivityManager instance -> b
-    15:16:void <init>() -> <init>
-    24:29:com.zhoujiulong.baselib.base.ActivityManager getInstance() -> a
-    38:42:void addActivity(com.zhoujiulong.baselib.base.SimpleActivity) -> a
-    50:53:void removeActivity(com.zhoujiulong.baselib.base.SimpleActivity) -> b
+    13:13:void <clinit>() -> <clinit>
+    8:8:void <init>() -> <init>
+    8:8:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    8:8:com.zhoujiulong.baselib.base.ActivityManager access$getInstance$cp() -> a
+    8:8:void access$setInstance$cp(com.zhoujiulong.baselib.base.ActivityManager) -> a
+    44:45:void addActivity(com.zhoujiulong.baselib.base.SimpleActivity) -> a
+    53:54:void removeActivity(com.zhoujiulong.baselib.base.SimpleActivity) -> b
+com.zhoujiulong.baselib.base.ActivityManager$Companion -> com.zhoujiulong.baselib.base.a$a:
+    10:10:void <init>() -> <init>
+    10:10:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    23:28:com.zhoujiulong.baselib.base.ActivityManager getInstance() -> a
 com.zhoujiulong.baselib.base.SimpleActivity -> com.zhoujiulong.baselib.base.SimpleActivity:
     android.content.Context mContext -> a
     boolean mNeedClickOutHideInput -> c
     android.app.Activity mActivity -> b
-    22:120:void <init>() -> <init>
-    106:111:void setOnClick(android.view.View[]) -> a
-    142:149:boolean isShouldHideInput(android.view.View,android.view.MotionEvent) -> a
+    19:109:void <init>() -> <init>
+    98:101:void setOnClick(android.view.View[]) -> a
+    130:140:boolean isShouldHideInput(android.view.View,android.view.MotionEvent) -> a
     void attachView() -> d
-    124:131:boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
+    112:119:boolean dispatchTouchEvent(android.view.MotionEvent) -> dispatchTouchEvent
     void detachView() -> e
     void getData() -> f
     int getLayoutId() -> g
-    void initData() -> h
-    158:163:void hideSoftInput(android.view.View) -> hideSoftInput
-    void initListener() -> i
-    void initPresenter() -> j
-    void initView() -> k
-    31:44:void onCreate(android.os.Bundle) -> onCreate
-    48:51:void onDestroy() -> onDestroy
+    23:23:android.content.Context getMContext() -> h
+    149:154:void hideSoftInput(android.view.View) -> hideSoftInput
+    void initData() -> i
+    void initListener() -> j
+    void initPresenter() -> k
+    void initView() -> l
+    27:40:void onCreate(android.os.Bundle) -> onCreate
+    43:46:void onDestroy() -> onDestroy
 com.zhoujiulong.baselib.base.SimpleApplication -> com.zhoujiulong.baselib.base.SimpleApplication:
-    android.app.Application mInstance -> a
-    18:18:void <init>() -> <init>
-    40:48:void initLogger() -> a
-    24:26:void attachBaseContext(android.content.Context) -> attachBaseContext
+    android.app.Application instance -> a
+    com.zhoujiulong.baselib.base.SimpleApplication$Companion Companion -> b
+    16:16:void <init>() -> <init>
+    40:47:void initLogger() -> a
+    25:27:void attachBaseContext(android.content.Context) -> attachBaseContext
     30:34:void onCreate() -> onCreate
-com.zhoujiulong.baselib.base.SimpleApplication$1 -> com.zhoujiulong.baselib.base.b:
-    com.zhoujiulong.baselib.base.SimpleApplication this$0 -> b
-    42:42:void <init>(com.zhoujiulong.baselib.base.SimpleApplication,com.orhanobut.logger.FormatStrategy) -> <init>
-    45:45:boolean isLoggable(int,java.lang.String) -> a
+com.zhoujiulong.baselib.base.SimpleApplication$Companion -> com.zhoujiulong.baselib.base.SimpleApplication$a:
+    18:18:void <init>() -> <init>
+    18:18:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+com.zhoujiulong.baselib.base.SimpleApplication$initLogger$1 -> com.zhoujiulong.baselib.base.b:
+    com.orhanobut.logger.PrettyFormatStrategy $formatStrategy -> b
+    42:42:void <init>(com.orhanobut.logger.PrettyFormatStrategy,com.orhanobut.logger.FormatStrategy) -> <init>
+    44:44:boolean isLoggable(int,java.lang.String) -> a
 com.zhoujiulong.baselib.base.SimpleFragment -> com.zhoujiulong.baselib.base.c:
     android.content.Context mContext -> b
     boolean mIsPrepared -> e
@@ -18510,21 +18523,24 @@ com.zhoujiulong.baselib.base.SimpleFragment -> com.zhoujiulong.baselib.base.c:
     java.lang.String TAG -> a
     android.view.View mRootView -> d
     android.app.Activity mActivity -> c
-    20:142:void <init>() -> <init>
-    void initView(android.view.View) -> a
-    121:126:void setOnClick(android.view.View[]) -> a
-    void attachView() -> d
-    void detachView() -> e
-    void getData() -> f
-    100:100:void getDataLazy() -> g
-    int getLayoutId() -> h
-    void initData() -> i
-    void initListener() -> j
-    void initPresenter() -> k
-    30:34:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
-    56:61:void onDestroyView() -> onDestroyView
+    18:135:void <init>() -> <init>
+    116:119:void setOnClick(android.view.View[]) -> a
+    void _$_clearFindViewByIdCache() -> d
+    void attachView() -> e
+    void detachView() -> f
+    void getData() -> g
+    99:99:void getDataLazy() -> h
+    int getLayoutId() -> i
+    22:22:android.content.Context getMContext() -> j
+    24:24:android.view.View getMRootView() -> k
+    void initData() -> l
+    void initListener() -> m
+    void initPresenter() -> n
+    void initView() -> o
+    31:35:android.view.View onCreateView(android.view.LayoutInflater,android.view.ViewGroup,android.os.Bundle) -> onCreateView
+    55:59:void onDestroyView() -> onDestroyView
     39:52:void onViewCreated(android.view.View,android.os.Bundle) -> onViewCreated
-    146:151:void setUserVisibleHint(boolean) -> setUserVisibleHint
+    138:143:void setUserVisibleHint(boolean) -> setUserVisibleHint
 com.zhoujiulong.baselib.http.HttpUtil -> com.zhoujiulong.baselib.a.a:
     27:28:void initTokenInvalidListener(com.zhoujiulong.baselib.http.listener.OnTokenInvalidListener) -> a
     34:35:void addHeaderInterceptor(okhttp3.Interceptor) -> a
@@ -18880,60 +18896,63 @@ com.zhoujiulong.simpleprojectframework.base.BaseActivity -> com.zhoujiulong.simp
     io.reactivex.disposables.CompositeDisposable mCompositeDisposable -> e
     com.zhoujiulong.widgetlib.dialog.LoadingDialog mLoadingDialog -> g
     java.lang.String ReTag -> d
-    8:13:void <init>() -> <init>
-    46:49:void attachView() -> d
-    53:57:void detachView() -> e
-    34:42:void onDestroy() -> onDestroy
-    29:30:void onPause() -> onPause
-    24:25:void onResume() -> onResume
+    8:14:void <init>() -> <init>
+    20:20:void setMPresenter(com.zhoujiulong.simpleprojectframework.base.BasePresenter) -> a
+    30:31:void attachView() -> d
+    34:35:void detachView() -> e
+    24:27:void onDestroy() -> onDestroy
 com.zhoujiulong.simpleprojectframework.base.BaseFragment -> com.zhoujiulong.simpleprojectframework.base.a:
     java.lang.String ReTag -> g
     com.zhoujiulong.simpleprojectframework.base.BasePresenter mPresenter -> i
     com.zhoujiulong.widgetlib.dialog.LoadingDialog mLoadingDialog -> j
     io.reactivex.disposables.CompositeDisposable mCompositeDisposable -> h
     8:13:void <init>() -> <init>
-    78:81:void hideLoading() -> a
-    68:74:void showLoading() -> b
-    46:49:void attachView() -> d
-    53:56:void detachView() -> e
-    34:42:void onDestroy() -> onDestroy
-    29:30:void onPause() -> onPause
-    24:25:void onResume() -> onResume
+    19:19:void setMPresenter(com.zhoujiulong.simpleprojectframework.base.BasePresenter) -> a
+    52:53:void hideLoading() -> a
+    45:49:void showLoading() -> b
+    30:31:void attachView() -> e
+    34:35:void detachView() -> f
+    23:27:void onDestroy() -> onDestroy
+    19:19:com.zhoujiulong.simpleprojectframework.base.BasePresenter getMPresenter() -> p
 com.zhoujiulong.simpleprojectframework.base.BaseModel -> com.zhoujiulong.simpleprojectframework.base.b:
     java.lang.Object mService -> b
     java.lang.String ReTag -> a
-    14:16:void <init>() -> <init>
+    5:15:void <init>() -> <init>
     21:22:void attachView(java.lang.String) -> a
-    25:29:void detachView() -> a
-    void initService() -> b
+    25:26:void detachView() -> a
+    12:12:java.lang.Object getMService() -> b
+    10:10:java.lang.String getReTag() -> c
+    java.lang.Object initService() -> d
 com.zhoujiulong.simpleprojectframework.base.BasePresenter -> com.zhoujiulong.simpleprojectframework.base.c:
     com.zhoujiulong.simpleprojectframework.base.BaseModel mModel -> a
     java.lang.String ReTag -> c
     com.zhoujiulong.simpleprojectframework.base.BaseView mView -> b
-    15:17:void <init>() -> <init>
-    22:27:void attachView(com.zhoujiulong.simpleprojectframework.base.BaseView,java.lang.String) -> a
-    30:38:void detachView() -> a
-    void initModel() -> b
+    6:16:void <init>() -> <init>
+    22:26:void attachView(java.lang.Object,java.lang.String) -> a
+    29:33:void detachView() -> a
+    8:8:com.zhoujiulong.simpleprojectframework.base.BaseModel getMModel() -> b
+    9:9:com.zhoujiulong.simpleprojectframework.base.BaseView getMView() -> c
+    com.zhoujiulong.simpleprojectframework.base.BaseModel initModel() -> d
 com.zhoujiulong.simpleprojectframework.base.BaseView -> com.zhoujiulong.simpleprojectframework.base.d:
     void hideLoading() -> a
     void showLoading() -> b
-com.zhoujiulong.simpleprojectframework.ui.account.contract.AccountFragmentContract$IView -> com.zhoujiulong.simpleprojectframework.a.a.a.a:
-com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment -> com.zhoujiulong.simpleprojectframework.a.a.b.c:
+com.zhoujiulong.simpleprojectframework.base.emptyimpl.EmptyContract$IView -> com.zhoujiulong.simpleprojectframework.base.a.a:
+com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment -> com.zhoujiulong.simpleprojectframework.a.a.a.c:
     java.util.HashMap _$_findViewCache -> k
     14:14:void <init>() -> <init>
     android.view.View _$_findCachedViewById(int) -> a
-    22:22:void initView(android.view.View) -> a
-    40:43:void getData() -> f
-    17:17:int getLayoutId() -> h
-    37:37:void initData() -> i
-    29:33:void initListener() -> j
-    26:26:void initPresenter() -> k
-    void _$_clearFindViewByIdCache() -> l
+    void _$_clearFindViewByIdCache() -> d
+    40:43:void getData() -> g
+    17:17:int getLayoutId() -> i
+    37:37:void initData() -> l
+    29:33:void initListener() -> m
+    26:26:void initPresenter() -> n
+    22:22:void initView() -> o
     47:47:void onClick(android.view.View) -> onClick
-com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment$getData$1 -> com.zhoujiulong.simpleprojectframework.a.a.b.a:
+com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment$getData$1 -> com.zhoujiulong.simpleprojectframework.a.a.a.a:
     com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment this$0 -> a
     41:42:void run() -> run
-com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment$initListener$1 -> com.zhoujiulong.simpleprojectframework.a.a.b.b:
+com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment$initListener$1 -> com.zhoujiulong.simpleprojectframework.a.a.a.b:
     com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment this$0 -> a
     30:32:void onClick(android.view.View) -> onClick
 com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity -> com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity:
@@ -18945,17 +18964,17 @@ com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity -> com.zh
     14:25:void <init>() -> <init>
     android.view.View _$_findCachedViewById(int) -> a
     14:14:android.content.Context access$getMContext$p(com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity) -> a
-    88:102:void initTab(com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity$TAB) -> a
-    61:85:void showTab(com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity$TAB) -> b
-    51:51:void getData() -> f
+    87:101:void initTab(com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity$TAB) -> a
+    60:84:void showTab(com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity$TAB) -> b
+    50:50:void getData() -> f
     30:30:int getLayoutId() -> g
-    46:47:void initData() -> h
-    42:43:void initListener() -> i
-    37:39:void initPresenter() -> j
-    34:34:void initView() -> k
-    int getMTabTextSelectedColor() -> l
-    int getMTabTextUnselectedColor() -> m
-    54:58:void onClick(android.view.View) -> onClick
+    45:46:void initData() -> i
+    41:42:void initListener() -> j
+    37:38:void initPresenter() -> k
+    34:34:void initView() -> l
+    int getMTabTextSelectedColor() -> m
+    int getMTabTextUnselectedColor() -> n
+    53:57:void onClick(android.view.View) -> onClick
 com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity$TAB -> com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity$TAB:
     16:16:void <init>(java.lang.String,int) -> <init>
 com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity$WhenMappings -> com.zhoujiulong.simpleprojectframework.ui.common.activity.a:
@@ -18973,10 +18992,12 @@ com.zhoujiulong.simpleprojectframework.ui.common.contract.MainContract$IPresente
 com.zhoujiulong.simpleprojectframework.ui.common.contract.MainContract$IView -> com.zhoujiulong.simpleprojectframework.a.b.a.b:
 com.zhoujiulong.simpleprojectframework.ui.common.model.MainModel -> com.zhoujiulong.simpleprojectframework.a.b.b.a:
     7:7:void <init>() -> <init>
-    10:11:void initService() -> b
+    7:7:java.lang.Object initService() -> d
+    10:10:com.zhoujiulong.simpleprojectframework.ui.common.service.MainService initService() -> d
 com.zhoujiulong.simpleprojectframework.ui.common.presenter.MainPresenter -> com.zhoujiulong.simpleprojectframework.a.b.c.a:
     7:7:void <init>() -> <init>
-    10:11:void initModel() -> b
+    7:7:com.zhoujiulong.simpleprojectframework.base.BaseModel initModel() -> d
+    10:10:com.zhoujiulong.simpleprojectframework.ui.common.model.MainModel initModel() -> d
 com.zhoujiulong.simpleprojectframework.ui.common.service.MainService -> com.zhoujiulong.simpleprojectframework.a.b.d.a:
 com.zhoujiulong.simpleprojectframework.ui.home.contract.HomeFragmentContract$IPresenter -> com.zhoujiulong.simpleprojectframework.a.c.a.a:
 com.zhoujiulong.simpleprojectframework.ui.home.contract.HomeFragmentContract$IView -> com.zhoujiulong.simpleprojectframework.a.c.a.b:
@@ -18987,15 +19008,15 @@ com.zhoujiulong.simpleprojectframework.ui.home.fragment.HomeFragment -> com.zhou
     18:18:void <init>() -> <init>
     android.view.View _$_findCachedViewById(int) -> a
     18:18:android.view.View access$getMRootView$p(com.zhoujiulong.simpleprojectframework.ui.home.fragment.HomeFragment) -> a
-    25:25:void initView(android.view.View) -> a
     83:84:void loginFaild(java.lang.String) -> a
     79:80:void loginSuccess() -> c
-    40:46:void getData() -> f
-    21:21:int getLayoutId() -> h
-    36:37:void initData() -> i
-    32:33:void initListener() -> j
-    28:29:void initPresenter() -> k
-    void _$_clearFindViewByIdCache() -> l
+    void _$_clearFindViewByIdCache() -> d
+    40:46:void getData() -> g
+    21:21:int getLayoutId() -> i
+    36:37:void initData() -> l
+    32:33:void initListener() -> m
+    28:29:void initPresenter() -> n
+    25:25:void initView() -> o
     49:76:void onClick(android.view.View) -> onClick
 com.zhoujiulong.simpleprojectframework.ui.home.fragment.HomeFragment$getData$1 -> com.zhoujiulong.simpleprojectframework.a.c.b.a:
     com.zhoujiulong.simpleprojectframework.ui.home.fragment.HomeFragment this$0 -> a
@@ -19007,14 +19028,16 @@ com.zhoujiulong.simpleprojectframework.ui.home.fragment.HomeFragment$onClick$2 -
     com.zhoujiulong.simpleprojectframework.ui.home.fragment.HomeFragment$onClick$2 INSTANCE -> a
     71:72:void onProgress(java.lang.String,int,long,long,boolean,com.bumptech.glide.load.engine.GlideException) -> a
 com.zhoujiulong.simpleprojectframework.ui.home.model.HomeFragmentModel -> com.zhoujiulong.simpleprojectframework.a.c.c.a:
-    15:15:void <init>() -> <init>
-    22:26:void login(java.lang.String,java.lang.String,com.zhoujiulong.baselib.http.listener.RequestListener) -> a
-    18:19:void initService() -> b
+    14:14:void <init>() -> <init>
+    21:25:void login(java.lang.String,java.lang.String,com.zhoujiulong.baselib.http.listener.RequestListener) -> a
+    14:14:java.lang.Object initService() -> d
+    17:17:com.zhoujiulong.simpleprojectframework.ui.home.service.HomeFragmentService initService() -> d
 com.zhoujiulong.simpleprojectframework.ui.home.presenter.HomeFragmentPresenter -> com.zhoujiulong.simpleprojectframework.a.c.d.b:
     14:14:void <init>() -> <init>
     14:14:com.zhoujiulong.simpleprojectframework.ui.home.contract.HomeFragmentContract$IView access$getMView$p(com.zhoujiulong.simpleprojectframework.ui.home.presenter.HomeFragmentPresenter) -> a
-    18:19:void initModel() -> b
-    22:39:void login() -> c
+    14:14:com.zhoujiulong.simpleprojectframework.base.BaseModel initModel() -> d
+    18:18:com.zhoujiulong.simpleprojectframework.ui.home.model.HomeFragmentModel initModel() -> d
+    22:39:void login() -> e
 com.zhoujiulong.simpleprojectframework.ui.home.presenter.HomeFragmentPresenter$login$1 -> com.zhoujiulong.simpleprojectframework.a.c.d.a:
     com.zhoujiulong.simpleprojectframework.ui.home.presenter.HomeFragmentPresenter this$0 -> a
     23:23:void <init>(com.zhoujiulong.simpleprojectframework.ui.home.presenter.HomeFragmentPresenter) -> <init>
@@ -19058,7 +19081,7 @@ com.zhoujiulong.widgetlib.dialog.LoadingDialog -> com.zhoujiulong.widgetlib.a.a:
     android.graphics.drawable.AnimationDrawable mLoadingAni -> b
     31:32:void <init>(android.content.Context) -> <init>
     35:36:void <init>(android.content.Context,int) -> <init>
-    22:27:com.zhoujiulong.widgetlib.dialog.LoadingDialog showLoading(android.content.Context) -> a
+    23:27:com.zhoujiulong.widgetlib.dialog.LoadingDialog build(android.content.Context) -> a
     59:61:void cancel() -> cancel
     53:55:void dismiss() -> dismiss
     40:49:void show() -> show
@@ -19199,7 +19222,6 @@ io.reactivex.disposables.CompositeDisposable -> io.reactivex.a.a:
     io.reactivex.internal.util.OpenHashSet resources -> a
     boolean disposed -> b
     36:37:void <init>() -> <init>
-    85:85:boolean isDisposed() -> a
     167:180:boolean delete(io.reactivex.disposables.Disposable) -> a
     227:231:void dispose(io.reactivex.internal.util.OpenHashSet) -> a
     67:78:void dispose() -> dispose
@@ -20597,9 +20619,11 @@ kotlin.jvm.internal.Intrinsics -> kotlin.jvm.internal.f:
     197:197:void reifiedOperationMarker(int,java.lang.String) -> a
     237:237:java.lang.Throwable sanitizeStackTrace(java.lang.Throwable) -> a
     241:253:java.lang.Throwable sanitizeStackTrace(java.lang.Throwable,java.lang.String) -> a
+    45:45:void throwUninitializedProperty(java.lang.String) -> b
     115:116:void checkParameterIsNotNull(java.lang.Object,java.lang.String) -> b
-    127:141:void throwParameterIsNullException(java.lang.String) -> b
     187:187:void throwUndefinedForReified() -> b
+    49:49:void throwUninitializedPropertyAccessException(java.lang.String) -> c
+    127:141:void throwParameterIsNullException(java.lang.String) -> d
 kotlin.jvm.internal.Lambda -> kotlin.jvm.internal.Lambda:
     10:10:void <init>(int) -> <init>
     10:10:int getArity() -> getArity

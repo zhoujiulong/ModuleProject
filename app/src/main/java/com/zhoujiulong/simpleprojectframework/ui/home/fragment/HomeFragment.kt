@@ -21,7 +21,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
         return R.layout.fragment_home
     }
 
-    override fun initView(rootView: View) {
+    override fun initView() {
     }
 
     override fun initPresenter() {
@@ -33,7 +33,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
     }
 
     override fun initData() {
-        mRootView.tvPackageName.text = mContext.packageName
+        mRootView.tvPackageName.text = mContext?.packageName
     }
 
     override fun getData() {
@@ -71,7 +71,7 @@ class HomeFragment : BaseFragment<HomeFragmentPresenter>(), HomeFragmentContract
                     Logger.e("img2:progress:$percent")
                 }
             }
-            R.id.btrequest -> mPresenter.login()
+            R.id.btrequest -> mPresenter?.login()
         }
     }
 

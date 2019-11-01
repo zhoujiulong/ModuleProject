@@ -14,16 +14,16 @@ import com.zhoujiulong.simpleprojectframework.ui.home.model.HomeFragmentModel
 class HomeFragmentPresenter : BasePresenter<HomeFragmentModel, HomeFragmentContract.IView>(),
     HomeFragmentContract.IPresenter {
 
-    override fun initModel() {
-        mModel = HomeFragmentModel()
+    override fun initModel(): HomeFragmentModel {
+        return HomeFragmentModel()
     }
 
     override fun login() {
-        mView.showLoading()
-        mModel.login("15270949160", "123465", object : RequestListener<DataResponse<String>>() {
+        mView?.showLoading()
+        mModel?.login("15270949160", "123465", object : RequestListener<DataResponse<String>>() {
             override fun requestSuccess(data: DataResponse<String>) {
-                mView.hideLoading()
-                mView.loginSuccess()
+                mView?.hideLoading()
+                mView?.loginSuccess()
             }
 
             override fun requestError(
@@ -32,8 +32,8 @@ class HomeFragmentPresenter : BasePresenter<HomeFragmentModel, HomeFragmentContr
                 errorMsg: String,
                 errorCode: Int
             ) {
-                mView.hideLoading()
-                mView.loginFaild(errorMsg)
+                mView?.hideLoading()
+                mView?.loginFaild(errorMsg)
             }
         })
     }

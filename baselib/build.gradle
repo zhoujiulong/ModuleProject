@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
 
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
 // 加载config.properties文件
 Properties configProp = new Properties()
 configProp.load(new FileInputStream(file("$rootDir/config.properties")))

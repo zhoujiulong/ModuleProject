@@ -5,6 +5,7 @@ import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
 import android.support.annotation.NonNull;
 import android.widget.ImageView;
+
 import com.zhoujiulong.widgetlib.R;
 
 
@@ -18,12 +19,11 @@ public class LoadingDialog extends Dialog {
     private ImageView mViewLoading;
     private AnimationDrawable mLoadingAni;
 
-    public static LoadingDialog showLoading(Context context) {
+    public static LoadingDialog build(Context context) {
         LoadingDialog loadingDialog = new LoadingDialog(context);
         loadingDialog.setContentView(R.layout.dialog_loading);
         loadingDialog.setCanceledOnTouchOutside(false);
         loadingDialog.setCancelable(true);
-        loadingDialog.show();
         return loadingDialog;
     }
 
