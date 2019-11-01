@@ -19010,7 +19010,8 @@ com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment$getDa
     41:42:void run() -> run
 com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment$initListener$1 -> com.zhoujiulong.simpleprojectframework.a.a.a.b:
     com.zhoujiulong.simpleprojectframework.ui.account.fragment.AccountFragment this$0 -> a
-    30:32:void onClick(android.view.View) -> onClick
+    30:32:void invoke(android.view.View) -> a
+    14:14:java.lang.Object invoke(java.lang.Object) -> invoke
 com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity -> com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity:
     java.util.HashMap _$_findViewCache -> l
     com.zhoujiulong.simpleprojectframework.ui.common.activity.MainActivity$TAB mCurrentTab -> i
@@ -19133,119 +19134,222 @@ com.zhoujiulong.widgetlib.R$styleable -> com.zhoujiulong.widgetlib.R$styleable:
 com.zhoujiulong.widgetlib.R$xml -> com.zhoujiulong.widgetlib.R$xml:
     3395:3395:void <init>() -> <init>
 com.zhoujiulong.widgetlib.dialog.LoadingDialog -> com.zhoujiulong.widgetlib.a.a:
-    android.widget.ImageView mViewLoading -> a
-    android.graphics.drawable.AnimationDrawable mLoadingAni -> b
-    31:32:void <init>(android.content.Context) -> <init>
-    35:36:void <init>(android.content.Context,int) -> <init>
+    kotlin.Lazy mViewLoading$delegate -> c
+    kotlin.Lazy mLoadingAni$delegate -> d
+    kotlin.reflect.KProperty[] $$delegatedProperties -> a
+    com.zhoujiulong.widgetlib.dialog.LoadingDialog$Companion Companion -> b
+    16:36:void <init>(android.content.Context,int) -> <init>
+    18:18:void <init>(android.content.Context,int,int,kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    android.graphics.drawable.AnimationDrawable getMLoadingAni() -> a
+    16:16:android.widget.ImageView access$getMViewLoading$p(com.zhoujiulong.widgetlib.dialog.LoadingDialog) -> a
+    android.widget.ImageView getMViewLoading() -> b
+    49:51:void cancel() -> cancel
+    44:46:void dismiss() -> dismiss
+    39:41:void show() -> show
+com.zhoujiulong.widgetlib.dialog.LoadingDialog$Companion -> com.zhoujiulong.widgetlib.a.a$a:
+    21:21:void <init>() -> <init>
+    21:21:void <init>(kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
     23:27:com.zhoujiulong.widgetlib.dialog.LoadingDialog build(android.content.Context) -> a
-    59:61:void cancel() -> cancel
-    53:55:void dismiss() -> dismiss
-    40:49:void show() -> show
+com.zhoujiulong.widgetlib.dialog.LoadingDialog$mLoadingAni$2 -> com.zhoujiulong.widgetlib.a.b:
+    com.zhoujiulong.widgetlib.dialog.LoadingDialog this$0 -> a
+    16:16:java.lang.Object invoke() -> invoke
+    36:36:android.graphics.drawable.AnimationDrawable invoke() -> invoke
+com.zhoujiulong.widgetlib.dialog.LoadingDialog$mViewLoading$2 -> com.zhoujiulong.widgetlib.a.c:
+    com.zhoujiulong.widgetlib.dialog.LoadingDialog this$0 -> a
+    16:16:java.lang.Object invoke() -> invoke
+    32:34:android.widget.ImageView invoke() -> invoke
 com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader -> com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader:
-    com.scwang.smartrefresh.layout.constant.SpinnerStyle mSpinnerStyle -> d
-    com.scwang.smartrefresh.layout.api.RefreshKernel mRefreshKernel -> e
-    android.widget.ImageView mImageViewAni -> a
-    int mFinishDuration -> c
-    android.graphics.drawable.AnimationDrawable mRefreshAnim -> b
-    40:41:void <init>(android.content.Context) -> <init>
-    44:45:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    48:50:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    82:82:boolean isSupportHorizontalDrag() -> a
-    87:87:void onHorizontalDrag(float,int,int) -> a
-    91:95:void onPulling(float,int,int,int) -> a
-    112:114:void onStartAnimator(com.scwang.smartrefresh.layout.api.RefreshLayout,int,int) -> a
-    118:119:int onFinish(com.scwang.smartrefresh.layout.api.RefreshLayout,boolean) -> a
-    135:136:void onInitialized(com.scwang.smartrefresh.layout.api.RefreshKernel,int,int) -> a
-    140:149:void onStateChanged(com.scwang.smartrefresh.layout.api.RefreshLayout,com.scwang.smartrefresh.layout.constant.RefreshState,com.scwang.smartrefresh.layout.constant.RefreshState) -> a
-    71:72:void initAni() -> b
-    99:103:void onReleasing(float,int,int,int) -> b
-    107:108:void onReleased(com.scwang.smartrefresh.layout.api.RefreshLayout,int,int) -> b
-    59:68:void initView() -> c
-    130:130:com.scwang.smartrefresh.layout.constant.SpinnerStyle getSpinnerStyle() -> getSpinnerStyle
-    77:77:android.view.View getView() -> getView
-    124:124:void setPrimaryColors(int[]) -> setPrimaryColors
-com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader$1 -> com.zhoujiulong.widgetlib.loadmore_refresh_view.a:
-    int[] $SwitchMap$com$scwang$smartrefresh$layout$constant$RefreshState -> a
-    140:140:void <clinit>() -> <clinit>
+    kotlin.Lazy mImageViewAni$delegate -> b
+    kotlin.Lazy mRefreshAnim$delegate -> c
+    com.scwang.smartrefresh.layout.api.RefreshKernel mRefreshKernel -> f
+    kotlin.reflect.KProperty[] $$delegatedProperties -> a
+    int mFinishDuration -> d
+    com.scwang.smartrefresh.layout.constant.SpinnerStyle mSpinnerStyle -> e
+    43:48:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    43:43:void <init>(android.content.Context,android.util.AttributeSet,int,int,kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    29:29:android.widget.ImageView access$getMImageViewAni$p(com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader) -> a
+    74:74:boolean isSupportHorizontalDrag() -> a
+    77:77:void onHorizontalDrag(float,int,int) -> a
+    80:84:void onPulling(float,int,int,int) -> a
+    98:99:void onStartAnimator(com.scwang.smartrefresh.layout.api.RefreshLayout,int,int) -> a
+    102:103:int onFinish(com.scwang.smartrefresh.layout.api.RefreshLayout,boolean) -> a
+    114:115:void onInitialized(com.scwang.smartrefresh.layout.api.RefreshKernel,int,int) -> a
+    126:126:void onStateChanged(com.scwang.smartrefresh.layout.api.RefreshLayout,com.scwang.smartrefresh.layout.constant.RefreshState,com.scwang.smartrefresh.layout.constant.RefreshState) -> a
+    62:67:void initView() -> b
+    87:91:void onReleasing(float,int,int,int) -> b
+    94:95:void onReleased(com.scwang.smartrefresh.layout.api.RefreshLayout,int,int) -> b
+    38:38:int getMFinishDuration() -> getMFinishDuration
+    40:40:com.scwang.smartrefresh.layout.api.RefreshKernel getMRefreshKernel() -> getMRefreshKernel
+    39:39:com.scwang.smartrefresh.layout.constant.SpinnerStyle getMSpinnerStyle() -> getMSpinnerStyle
+    110:110:com.scwang.smartrefresh.layout.constant.SpinnerStyle getSpinnerStyle() -> getSpinnerStyle
+    70:70:android.view.View getView() -> getView
+    38:38:void setMFinishDuration(int) -> setMFinishDuration
+    40:40:void setMRefreshKernel(com.scwang.smartrefresh.layout.api.RefreshKernel) -> setMRefreshKernel
+    39:39:void setMSpinnerStyle(com.scwang.smartrefresh.layout.constant.SpinnerStyle) -> setMSpinnerStyle
+    106:106:void setPrimaryColors(int[]) -> setPrimaryColors
+com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader$mImageViewAni$2 -> com.zhoujiulong.widgetlib.loadmore_refresh_view.a:
+    com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader this$0 -> a
+    29:29:java.lang.Object invoke() -> invoke
+    32:35:android.widget.ImageView invoke() -> invoke
+com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader$mRefreshAnim$2 -> com.zhoujiulong.widgetlib.loadmore_refresh_view.b:
+    com.zhoujiulong.widgetlib.loadmore_refresh_view.NormalRefreshHeader this$0 -> a
+    29:29:java.lang.Object invoke() -> invoke
+    37:37:android.graphics.drawable.AnimationDrawable invoke() -> invoke
 com.zhoujiulong.widgetlib.widget.LoadingView -> com.zhoujiulong.widgetlib.widget.LoadingView:
-    android.content.Context mContext -> a
+    kotlin.Lazy mErrorView$delegate -> d
+    kotlin.Lazy mIntentErrorBottomTv$delegate -> f
+    kotlin.Lazy mTvErrorCenterMsg$delegate -> h
+    kotlin.Lazy mEmptyView$delegate -> j
+    kotlin.Lazy mTvEmptyCenterMsg$delegate -> l
+    kotlin.Lazy mViewLoading$delegate -> n
     java.lang.String mErrorCenterMsgStr -> r
     java.lang.String mEmptyBottomMsgStr -> v
-    android.widget.ImageView mIvErrorIcon -> g
-    android.widget.ImageView mIvEmptyIcon -> k
     int mBottomPadding -> y
-    android.widget.TextView mIntentErrorBottomTv -> f
-    android.view.View mLoadingView -> c
-    android.widget.TextView mTvErrorCenterMsg -> h
-    android.view.View mIntentErrorView -> e
-    android.widget.TextView mTvEmptyCenterMsg -> l
     int mErrorIconRes -> q
+    kotlin.Lazy mLoadingView$delegate -> c
     int mInitType -> o
+    kotlin.Lazy mIntentErrorView$delegate -> e
     android.graphics.drawable.AnimationDrawable mLoadingAni -> w
+    kotlin.Lazy mIvErrorIcon$delegate -> g
+    kotlin.Lazy mTvErrorBottomMsg$delegate -> i
+    kotlin.Lazy mIvEmptyIcon$delegate -> k
+    kotlin.Lazy mTvEmptyBottomMsg$delegate -> m
     java.lang.String mErrorBottomMsgStr -> s
     java.lang.String mEmptyCenterMsgStr -> u
-    android.view.View mEmptyView -> j
+    kotlin.reflect.KProperty[] $$delegatedProperties -> a
     int mTopPadding -> x
-    android.widget.TextView mTvErrorBottomMsg -> i
-    android.widget.ImageView mViewLoading -> n
     int mEmptyIconRes -> t
     android.view.View mContentView -> b
-    android.view.View mErrorView -> d
-    android.widget.TextView mTvEmptyBottomMsg -> m
+    android.content.Context mContext -> z
     int mBackgroundRes -> p
-    57:58:void <init>(android.content.Context) -> <init>
-    61:62:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    65:81:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    203:207:void showContent() -> a
-    216:218:void showEmpty() -> b
-    232:234:void showError() -> c
-    237:239:void showIntentError() -> d
-    210:213:void showLoading() -> e
-    248:264:void hideAllView() -> f
-    152:158:void setViewData() -> g
-    147:149:void onDetachedFromWindow() -> onDetachedFromWindow
-    85:143:void onFinishInflate() -> onFinishInflate
-    242:245:void setEmptyCenterMsgStr(java.lang.String) -> setEmptyCenterMsgStr
-    197:200:void setIntentErrorListener(android.view.View$OnClickListener) -> setIntentErrorListener
-    164:167:void setOnBottomTvListener(android.view.View$OnClickListener) -> setOnBottomTvListener
-    189:191:void setOnEmptyListener(android.view.View$OnClickListener) -> setOnEmptyListener
-    173:175:void setOnErrorAndIntentErrorListener(android.view.View$OnClickListener) -> setOnErrorAndIntentErrorListener
-    181:183:void setOnErrorListener(android.view.View$OnClickListener) -> setOnErrorListener
+    21:94:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    23:24:void <init>(android.content.Context,android.util.AttributeSet,int,int,kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    21:21:android.content.Context access$getMContext$p(com.zhoujiulong.widgetlib.widget.LoadingView) -> a
+    194:196:void showContent() -> a
+    21:21:android.view.View access$getMEmptyView$p(com.zhoujiulong.widgetlib.widget.LoadingView) -> b
+    205:207:void showEmpty() -> b
+    21:21:android.view.View access$getMErrorView$p(com.zhoujiulong.widgetlib.widget.LoadingView) -> c
+    217:219:void showError() -> c
+    21:21:android.view.View access$getMIntentErrorView$p(com.zhoujiulong.widgetlib.widget.LoadingView) -> d
+    222:224:void showIntentError() -> d
+    21:21:android.view.View access$getMLoadingView$p(com.zhoujiulong.widgetlib.widget.LoadingView) -> e
+    199:202:void showLoading() -> e
+    233:249:void hideAllView() -> f
+    141:147:void setViewData() -> g
+    136:138:void onDetachedFromWindow() -> onDetachedFromWindow
+    99:120:void onFinishInflate() -> onFinishInflate
+    227:230:void setEmptyCenterMsgStr(java.lang.String) -> setEmptyCenterMsgStr
+    188:191:void setIntentErrorListener(kotlin.jvm.functions.Function1) -> setIntentErrorListener
+    153:156:void setOnBottomTvListener(kotlin.jvm.functions.Function1) -> setOnBottomTvListener
+    179:182:void setOnEmptyListener(kotlin.jvm.functions.Function1) -> setOnEmptyListener
+    162:164:void setOnErrorAndIntentErrorListener(kotlin.jvm.functions.Function1) -> setOnErrorAndIntentErrorListener
+    170:173:void setOnErrorListener(kotlin.jvm.functions.Function1) -> setOnErrorListener
+com.zhoujiulong.widgetlib.widget.LoadingView$mEmptyView$2 -> com.zhoujiulong.widgetlib.widget.a:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    53:57:android.view.View invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mErrorView$2 -> com.zhoujiulong.widgetlib.widget.b:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    35:39:android.view.View invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mIntentErrorBottomTv$2 -> com.zhoujiulong.widgetlib.widget.c:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    48:48:android.widget.TextView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mIntentErrorView$2 -> com.zhoujiulong.widgetlib.widget.d:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    42:46:android.view.View invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mIvEmptyIcon$2 -> com.zhoujiulong.widgetlib.widget.e:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    59:59:android.widget.ImageView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mIvErrorIcon$2 -> com.zhoujiulong.widgetlib.widget.f:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    49:49:android.widget.ImageView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mLoadingView$2 -> com.zhoujiulong.widgetlib.widget.g:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    28:32:android.view.View invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mTvEmptyBottomMsg$2 -> com.zhoujiulong.widgetlib.widget.h:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    61:61:android.widget.TextView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mTvEmptyCenterMsg$2 -> com.zhoujiulong.widgetlib.widget.i:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    60:60:android.widget.TextView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mTvErrorBottomMsg$2 -> com.zhoujiulong.widgetlib.widget.j:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    51:51:android.widget.TextView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mTvErrorCenterMsg$2 -> com.zhoujiulong.widgetlib.widget.k:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    50:50:android.widget.TextView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$mViewLoading$2 -> com.zhoujiulong.widgetlib.widget.l:
+    com.zhoujiulong.widgetlib.widget.LoadingView this$0 -> a
+    21:21:java.lang.Object invoke() -> invoke
+    62:62:android.widget.ImageView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.LoadingView$sam$android_view_View_OnClickListener$0 -> com.zhoujiulong.widgetlib.widget.m:
+    kotlin.jvm.functions.Function1 function -> a
 com.zhoujiulong.widgetlib.widget.RoundImageView -> com.zhoujiulong.widgetlib.widget.RoundImageView:
     float[] rids -> a
     android.graphics.Path mPath -> b
-    25:26:void <init>(android.content.Context) -> <init>
-    29:30:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    33:61:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    65:71:void onDraw(android.graphics.Canvas) -> onDraw
-    74:78:void setAllRadius(int) -> setAllRadius
+    17:56:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    19:20:void <init>(android.content.Context,android.util.AttributeSet,int,int,kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    61:67:void onDraw(android.graphics.Canvas) -> onDraw
+    70:74:void setAllRadius(int) -> setAllRadius
 com.zhoujiulong.widgetlib.widget.TitleBar -> com.zhoujiulong.widgetlib.widget.TitleBar:
-    java.lang.String mRightTitleStr -> f
-    boolean mIsShowBackIcon -> j
-    boolean mNeedSetStatuBarTransparent -> k
-    int mIvRightIconRes -> i
-    int mTitleBackgroundColor -> g
-    android.widget.ImageView mIvBack -> b
-    android.widget.ImageView mIvRightIcon -> h
-    android.view.View$OnClickListener mBackListener -> l
-    android.widget.TextView mTvTitle -> c
-    android.view.View$OnClickListener mRightIconListener -> n
-    android.view.View$OnClickListener mRightTitleListener -> m
-    android.widget.TextView mTvRightTitle -> e
-    android.view.View mTopEmptyView -> a
-    java.lang.String mTitleStr -> d
-    45:46:void <init>(android.content.Context) -> <init>
-    49:50:void <init>(android.content.Context,android.util.AttributeSet) -> <init>
-    53:57:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
-    60:76:void init(android.content.Context,android.util.AttributeSet) -> a
-    79:103:void initView(android.content.Context) -> a
-    106:115:void initStatusBar() -> a
-    119:138:void onClick(android.view.View) -> onClick
-    144:145:void setOnBackListener(android.view.View$OnClickListener) -> setOnBackListener
-    151:152:void setOnRightTitleListener(android.view.View$OnClickListener) -> setOnRightTitleListener
-    175:176:void setRightIconListener(android.view.View$OnClickListener) -> setRightIconListener
-    166:169:void setRightTitleText(java.lang.String) -> setRightTitleText
-    158:160:void setTitleText(java.lang.String) -> setTitleText
+    kotlin.Lazy mTopEmptyView$delegate -> b
+    java.lang.String mRightTitleStr -> g
+    kotlin.Lazy mIvBack$delegate -> c
+    kotlin.Lazy mTvTitle$delegate -> d
+    kotlin.Lazy mTvRightTitle$delegate -> f
+    int mIvRightIconRes -> j
+    int mTitleBackgroundColor -> h
+    boolean mIsShowBackIcon -> k
+    kotlin.Lazy mIvRightIcon$delegate -> i
+    boolean mNeedSetStatuBarTransparent -> l
+    android.view.View$OnClickListener mRightTitleListener -> n
+    kotlin.reflect.KProperty[] $$delegatedProperties -> a
+    android.view.View$OnClickListener mBackListener -> m
+    android.view.View$OnClickListener mRightIconListener -> o
+    java.lang.String mTitleStr -> e
+    23:50:void <init>(android.content.Context,android.util.AttributeSet,int) -> <init>
+    25:26:void <init>(android.content.Context,android.util.AttributeSet,int,int,kotlin.jvm.internal.DefaultConstructorMarker) -> <init>
+    54:70:void init(android.content.Context,android.util.AttributeSet) -> a
+    73:95:void initView(android.content.Context) -> a
+    98:107:void initStatusBar() -> a
+    110:119:void onClick(android.view.View) -> onClick
+    125:126:void setOnBackListener(kotlin.jvm.functions.Function1) -> setOnBackListener
+    132:133:void setOnRightTitleListener(kotlin.jvm.functions.Function1) -> setOnRightTitleListener
+    156:157:void setRightIconListener(kotlin.jvm.functions.Function1) -> setRightIconListener
+    147:150:void setRightTitleText(java.lang.String) -> setRightTitleText
+    139:141:void setTitleText(java.lang.String) -> setTitleText
+com.zhoujiulong.widgetlib.widget.TitleBar$mIvBack$2 -> com.zhoujiulong.widgetlib.widget.n:
+    com.zhoujiulong.widgetlib.widget.TitleBar this$0 -> a
+    23:23:java.lang.Object invoke() -> invoke
+    30:30:android.widget.ImageView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.TitleBar$mIvRightIcon$2 -> com.zhoujiulong.widgetlib.widget.o:
+    com.zhoujiulong.widgetlib.widget.TitleBar this$0 -> a
+    23:23:java.lang.Object invoke() -> invoke
+    36:36:android.widget.ImageView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.TitleBar$mTopEmptyView$2 -> com.zhoujiulong.widgetlib.widget.p:
+    com.zhoujiulong.widgetlib.widget.TitleBar this$0 -> a
+    23:23:java.lang.Object invoke() -> invoke
+    29:29:android.view.View invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.TitleBar$mTvRightTitle$2 -> com.zhoujiulong.widgetlib.widget.q:
+    com.zhoujiulong.widgetlib.widget.TitleBar this$0 -> a
+    23:23:java.lang.Object invoke() -> invoke
+    33:33:android.widget.TextView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.TitleBar$mTvTitle$2 -> com.zhoujiulong.widgetlib.widget.r:
+    com.zhoujiulong.widgetlib.widget.TitleBar this$0 -> a
+    23:23:java.lang.Object invoke() -> invoke
+    31:31:android.widget.TextView invoke() -> invoke
+com.zhoujiulong.widgetlib.widget.TitleBar$sam$android_view_View_OnClickListener$0 -> com.zhoujiulong.widgetlib.widget.s:
+    kotlin.jvm.functions.Function1 function -> a
 io.reactivex.BackpressureOverflowStrategy -> io.reactivex.BackpressureOverflowStrategy:
     23:21:void <clinit>() -> <clinit>
     21:21:void <init>(java.lang.String,int) -> <init>

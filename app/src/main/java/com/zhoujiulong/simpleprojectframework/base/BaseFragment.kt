@@ -42,8 +42,8 @@ abstract class BaseFragment<T : BasePresenter<*, *>> : SimpleFragment(), BaseVie
     }
 
     override fun showLoading() {
-        if (mLoadingDialog == null) {
-            mLoadingDialog = LoadingDialog.build(mContext)
+        if (mLoadingDialog == null && mContext!=null) {
+            mLoadingDialog = LoadingDialog.build(mContext!!)
         }
         mLoadingDialog?.show()
     }
